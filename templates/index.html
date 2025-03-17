@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправка SMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Введите номер телефона для отправки SMS</h2>
+        <form method="POST">
+            <input type="text" name="phone" id="phone" placeholder="Введите номер с телефона (например, 380123456789)" required>
+            <br>
+            <button type="submit">Отправить СМС</button>
+        </form>
+    </div>
+
+    <script>
+        // Очищаем ввод от всех символов, кроме цифр
+        document.getElementById("phone").addEventListener("input", function(event) {
+            event.target.value = event.target.value.replace(/\D/g, '');
+        });
+    </script>
+
+</body>
+</html>
